@@ -1,5 +1,7 @@
 # Bincomx
 
+Status Badge: [![Deploy to Firebase Hosting on merge](https://github.com/jamesconfy/bincomx/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/jamesconfy/bincomx/actions/workflows/firebase-hosting-merge.yml)
+
 ## Setting Up
 
 To run this locally on your system, clone the repo to your local machine and start by doing a `python -m venv venv`. Note: You need to have python installed on your system already. After it has finishing creating your virtual environment, you activate it by doing a `. venv/bin/activate` and you use pip to install the packages `pip install --upgrade pip && pip install -r requirements.txt`.

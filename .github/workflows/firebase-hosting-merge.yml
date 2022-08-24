@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: pip install --upgrade pip && pip install -r requirements.txt
-      - run: flask run
+      - run: gunicorn --bind 0.0.0.0:5000 run:app
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
