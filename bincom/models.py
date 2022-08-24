@@ -17,7 +17,7 @@ class LGA_RESULTS(db.Model):
     party_abbreviation = db.Column(db.String(4), nullable=False)
     party_score = db.Column(db.Integer, nullable=False)
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class PU_RESULTS(db.Model):
@@ -27,7 +27,7 @@ class PU_RESULTS(db.Model):
     party_abbreviation = db.Column(db.String(4), nullable=False)
     party_score = db.Column(db.Integer, nullable=False)
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class STATE_RESULTS(db.Model): 
@@ -37,7 +37,7 @@ class STATE_RESULTS(db.Model):
     party_abbreviation = db.Column(db.String(4), nullable=False)
     party_score = db.Column(db.Integer, nullable=False)
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class WARD_RESULTS(db.Model):
@@ -47,18 +47,7 @@ class WARD_RESULTS(db.Model):
     party_abbreviation = db.Column(db.String(4), nullable=False)
     party_score = db.Column(db.Integer, nullable=False)
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
-    user_ip_address = db.Column(db.String(50), nullable=False)
-
-class LGA(db.Model):
-    __tablename__ = 'lga'
-    id = db.Column(db.Integer, primary_key=True)
-    lga_id = db.Column(db.Integer)
-    lga_name = db.Column(db.String(50), nullable=False)
-    state_id = db.Column(db.Integer, nullable=False)
-    lga_description = db.Column(db.Text, nullable=False)
-    entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class PARTY(db.Model):
@@ -80,7 +69,7 @@ class POLLING_UNIT(db.Model):
     lat = db.Column(db.String(255))
     long = db.Column(db.String(255))
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class WARD(db.Model):
@@ -91,10 +80,21 @@ class WARD(db.Model):
     lga_id = db.Column(db.Integer, nullable=False)
     ward_description = db.Column(db.Text, nullable=False)
     entered_by_user = db.Column(db.String(50), nullable=False)
-    date_entered = db.Column(db.DateTime(), nullable=False, default=datetime.utcnow)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
     user_ip_address = db.Column(db.String(50), nullable=False)
 
 class STATE(db.Model):
     __tablename__ = 'state'
     id = db.Column(db.Integer, primary_key=True)
     state_name = db.Column(db.String(255), nullable=False)
+
+class LGA(db.Model):
+    __tablename__ = 'lga'
+    id = db.Column(db.Integer, primary_key=True)
+    lga_id = db.Column(db.Integer)
+    lga_name = db.Column(db.String(50), nullable=False)
+    state_id = db.Column(db.Integer, nullable=False)
+    lga_description = db.Column(db.Text, nullable=False)
+    entered_by_user = db.Column(db.String(50), nullable=False)
+    date_entered = db.Column(db.DateTime(120), nullable=False, default=datetime.utcnow)
+    user_ip_address = db.Column(db.String(50), nullable=False)
