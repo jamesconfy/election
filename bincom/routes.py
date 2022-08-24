@@ -28,6 +28,10 @@ def load():
 
     return
 
+@app.route('/')
+def home():
+    return jsonify('Hello')
+
 @app.route('/polling_unit_result', methods=['GET'])
 def polling_unit_results():
     results = PU_RESULTS.query.all()
@@ -57,15 +61,15 @@ def polling_unit_result(polling_unit_uniqueid):
 #     return jsonify(manyLGAResult.dump(result)), 200
 
 
-@app.route('/lga_result', methods=['GET', 'POST'])
-def lga_result():
-    form = DropForm()
-    if request.method == 'POST':
-        result = PU_RESULTS.query.filter_by()
-        sel = request.form.get('sel')
-        return jsonify(sel)
+# @app.route('/lga_result', methods=['GET', 'POST'])
+# def lga_result():
+#     form = DropForm()
+#     if request.method == 'POST':
+#         result = PU_RESULTS.query.filter_by()
+#         sel = request.form.get('sel')
+#         return jsonify(sel)
 
-    return render_template('lga.html', form=form)
+#     return render_template('lga.html', form=form)
 
 @app.route('/polling_unit', methods=['GET', 'POST'])
 def polling_unit():
