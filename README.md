@@ -1,4 +1,4 @@
-# Bincomx
+# Election Application
 
 Status Badge: [![Deploy to Firebase Hosting on merge](https://github.com/jamesconfy/bincomx/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/jamesconfy/bincomx/actions/workflows/firebase-hosting-merge.yml)
 
